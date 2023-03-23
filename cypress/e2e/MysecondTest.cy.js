@@ -14,11 +14,10 @@ describe("css selectors", ()=>{
         cy.get("#twotabsearchtextbox").type("books on sell")
 
 
+        //step 3--- grab the search icon class and use the click method
+        cy.get("input#nav-search-submit-button").click()
+
     }); 
 
-    it("second test", ()=>{
-
-         //step 3--- grab the search icon class and use the click method
-         cy.get("#nav-search-submit-button").click()
-    })
+    
 })
