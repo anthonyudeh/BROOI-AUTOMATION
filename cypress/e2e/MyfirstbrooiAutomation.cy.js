@@ -14,4 +14,28 @@ describe('Government ID verification test', ()=>{
         cy.get("button.btn-primary").eq(0).click()
     
     })
+
+
+
+    it('Verify Government ID', ()=>{
+
+        cy.visit("https://staging.brooi.com/?tab=login")
+
+        cy.get("input.float-input").eq(0).type("anthonyudehchinaza@gmail.com")
+
+        cy.get("input.float-input").eq(1).type("Ghostfire2000#")
+
+        cy.get("button.btn-primary").click()
+
+        // cy.xpath("//*[@id=",app,"]/div[1]/nav/header/div/nav/div[3]/ul/li[2]/button/div[1]").click()
+        //.get() method is only for css selectors  when you used xpath cy.xpath("")
+
+        // cy.xpath("//*[@id=",app,"]/div[1]/nav/header/div/nav/div[3]/ul/li[2]/button/div[1]/svg").click()
+
+        cy.get("a.11eqlma").eq(4).click()
+
+        cy.get("div._15wuypg").eq(5).click()
+
+        cy.get("button.edit--btn").click()
+    })
 })
