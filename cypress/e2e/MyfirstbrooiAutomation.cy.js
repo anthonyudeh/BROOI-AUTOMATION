@@ -27,10 +27,7 @@ describe('Government ID verification test', ()=>{
 
         cy.get("button.btn-primary").click()
 
-        // cy.xpath("//*[@id=",app,"]/div[1]/nav/header/div/nav/div[3]/ul/li[2]/button/div[1]").click()
-        //.get() method is only for css selectors  when you used xpath cy.xpath("")
-
-        // cy.xpath("//*[@id=",app,"]/div[1]/nav/header/div/nav/div[3]/ul/li[2]/button/div[1]/svg").click()
+        cy.xpath("").click()
 
         cy.get("a.11eqlma").eq(4).click()
 
