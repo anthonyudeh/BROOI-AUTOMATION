@@ -27,7 +27,8 @@ describe('Government ID verification test', ()=>{
 
         cy.get("button.btn-primary").click()
 
-        cy.xpath("").click()
+        // cy.xpath("").click()
+        cy.get("button.__profile-btn").click()
 
         cy.get("a.11eqlma").eq(4).click()
 
