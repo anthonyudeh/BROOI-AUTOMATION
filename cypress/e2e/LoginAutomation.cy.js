@@ -1,7 +1,6 @@
 
 
-
-describe('Government ID verification test', ()=>{
+describe('Logiin verification test--Negative', ()=>{
 
     it('Positive test' , ()=>{
         
@@ -16,24 +15,15 @@ describe('Government ID verification test', ()=>{
     })
 
 
-
-    it('Verify Government ID', ()=>{
-
+    it('Negative test', ()=>{
         cy.visit("https://staging.brooi.com/?tab=login")
 
         cy.get("input.float-input").eq(0).type("anthonyudehchinaza@gmail.com")
 
-        cy.get("input.float-input").eq(1).type("Ghostfire2000#")
+        cy.get("input.float-input").eq(1).type("Ghostfire2000#xx")
 
-        cy.get("button.btn-primary").click()
+        cy.get('.login').contains('Authentication failed for credentials for email:anthonyudehchinaza@gmail.com. Incorrect Password')
 
-        // cy.xpath("").click()
-        cy.get("button.__profile-btn").click()
-
-        cy.get("a.11eqlma").eq(4).click()
-
-        cy.get("div._15wuypg").eq(5).click()
-
-        cy.get("button.edit--btn").click()
     })
+
 })
