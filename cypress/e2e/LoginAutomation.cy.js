@@ -52,4 +52,24 @@ describe('Logiin verification ', ()=>{
         cy.get('.login').should('contain','Authentication failed for credentials for email:anthonyudehchinaza@gmail.com. Incorrect Password')
     })
 
+
+    it('Log out validation ', ()=>{
+        
+        cy.visit("https://staging.brooi.com/?tab=login")
+
+        //email and password 
+        cy.get("input.float-input").eq(0).type("anthonyudehchinazagmail.com")
+        cy.get("input.float-input").eq(1).type("Ghostfire2000#xx")
+        
+        //login
+        cy.get("button.btn-primary").eq(0).click()
+
+        //logout
+        cy.get("div.m1tb1yiu").eq(5).click()
+
+        //validating if it is redirecting user to login
+        cy.url().should('eq', 'https://staging.brooi.com/?tab=login').and('include', 'staging.brooi')
+
+    })
+
 })
