@@ -1,5 +1,4 @@
 
-
 describe('Logiin verification ', ()=>{
 
     it('Positive test' , ()=>{
@@ -15,6 +14,14 @@ describe('Logiin verification ', ()=>{
 
         //login
         cy.get("button.btn-primary").eq(0).click()
+
+
+        //assertion that the user is now logged in 
+        //logo assertion
+        cy.get('img[alt="Logo"].brooi-logo').should('be.visible')
+
+        //logo assertion
+        cy.url().should('eq','https://staging.brooi.com/')
     
     })
 
@@ -47,7 +54,6 @@ describe('Logiin verification ', ()=>{
         //login
         cy.get("button.btn-primary").eq(0).click()
         
-
         //validating incorrect email
         cy.get('.login').should('contain','Please enter a valid email address')
     })
