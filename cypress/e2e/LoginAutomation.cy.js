@@ -49,7 +49,7 @@ describe('Logiin verification ', ()=>{
         
 
         //validating incorrect email
-        cy.get('.login').should('contain','Authentication failed for credentials for email:anthonyudehchinaza@gmail.com. Incorrect Password')
+        cy.get('.login').should('contain','Please enter a valid email address')
     })
 
 
@@ -58,8 +58,8 @@ describe('Logiin verification ', ()=>{
         cy.visit("https://staging.brooi.com/?tab=login")
 
         //email and password 
-        cy.get("input.float-input").eq(0).type("anthonyudehchinazagmail.com")
-        cy.get("input.float-input").eq(1).type("Ghostfire2000#xx")
+        cy.get("input.float-input").eq(0).type("anthonyudehchinaza@gmail.com")
+        cy.get("input.float-input").eq(1).type("Ghostfire2000#")
         
         //login
         cy.get("button.btn-primary").eq(0).click()
