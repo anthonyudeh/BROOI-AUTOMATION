@@ -89,71 +89,71 @@ describe('Payments and Payouts automation', () => {
 
     })
 
-    it('Validation for manage payment',()=>{
+    it('Validation for manage payment', () => {
 
-         //visit login page
-         cy.visit('https://staging.brooi.com/?tab=login')
+        //visit login page
+        cy.visit('https://staging.brooi.com/?tab=login')
 
-         cy.get("input.float-input").eq(0).type("anthonyudehchinaza@gmail.com")
-         cy.get("input.float-input").eq(1).type("Ghostfire2000#")
- 
-         //login 
-         cy.get("button.btn-primary").click()
- 
-         //navigation humbuger menu 
-         cy.get("button.__profile-btn").click()
- 
-         //user account
-         cy.get("div.m1tb1yiu").eq(4).click()
- 
-         //navigate to payments & payouts
-         cy.get("div._15wuypg").eq(2).click()
- 
-         //logo assertion
-         cy.get('img[alt="Logo"].brooi-logo').should('be.visible')
- 
-         //url assertion
-         cy.url().should('eq', 'https://staging.brooi.com/account-settings/payments/payment-methods')
+        cy.get("input.float-input").eq(0).type("anthonyudehchinaza@gmail.com")
+        cy.get("input.float-input").eq(1).type("Ghostfire2000#")
+
+        //login 
+        cy.get("button.btn-primary").click()
+
+        //navigation humbuger menu 
+        cy.get("button.__profile-btn").click()
+
+        //user account
+        cy.get("div.m1tb1yiu").eq(4).click()
+
+        //navigate to payments & payouts
+        cy.get("div._15wuypg").eq(2).click()
+
+        //logo assertion
+        cy.get('img[alt="Logo"].brooi-logo').should('be.visible')
+
+        //url assertion
+        cy.url().should('eq', 'https://staging.brooi.com/account-settings/payments/payment-methods')
 
 
-         //manage payments 
-         cy.get('a.manage-btn').click()
+        //manage payments 
+        cy.get('a.manage-btn').click()
 
-         //validating manage payments url
-         cy.url().should('eq','https://staging.brooi.com/account-settings/payments/your-payments')
+        //validating manage payments url
+        cy.url().should('eq', 'https://staging.brooi.com/account-settings/payments/your-payments')
 
     })
 
 
 
-    it('Validating payouts', ()=>{
-        
-         //visit login page
-         cy.visit('https://staging.brooi.com/?tab=login')
+    it('Validating payouts', () => {
 
-         cy.get("input.float-input").eq(0).type("anthonyudehchinaza@gmail.com")
-         cy.get("input.float-input").eq(1).type("Ghostfire2000#")
- 
-         //login 
-         cy.get("button.btn-primary").click()
- 
-         //navigation humbuger menu 
-         cy.get("button.__profile-btn").click()
- 
-         //user account
-         cy.get("div.m1tb1yiu").eq(4).click()
- 
-         //navigate to payments & payouts
-         cy.get("div._15wuypg").eq(2).click()
- 
-         //logo assertion
-         cy.get('img[alt="Logo"].brooi-logo').should('be.visible')
- 
-         //url assertion
-         cy.url().should('eq', 'https://staging.brooi.com/account-settings/payments/payment-methods')
+        //visit login page
+        cy.visit('https://staging.brooi.com/?tab=login')
 
-         //route to payouts 
-         cy.get('button.set-btn').eq(1).click()
-         cy.get('a.manage-btn').click()
+        cy.get("input.float-input").eq(0).type("anthonyudehchinaza@gmail.com")
+        cy.get("input.float-input").eq(1).type("Ghostfire2000#")
+
+        //login 
+        cy.get("button.btn-primary").click()
+
+        //navigation humbuger menu 
+        cy.get("button.__profile-btn").click()
+
+        //user account
+        cy.get("div.m1tb1yiu").eq(4).click()
+
+        //navigate to payments & payouts
+        cy.get("div._15wuypg").eq(2).click()
+
+        //logo assertion
+        cy.get('img[alt="Logo"].brooi-logo').should('be.visible')
+
+        //url assertion
+        cy.url().should('eq', 'https://staging.brooi.com/account-settings/payments/payment-methods')
+
+        //route to payouts 
+        cy.get('button.set-btn').eq(1).click()
+        cy.get('a.manage-btn').click()
     })
 })
