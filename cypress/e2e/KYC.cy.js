@@ -158,4 +158,43 @@ describe('Know your customer verification', ()=>{
 
         cy.get('button[type="submit"].next-btn').click()
     })
+
+    
+    it('KYC validating back button', ()=>{
+
+        cy.visit("https://staging.brooi.com/?tab=login")
+
+        //user credentials
+        cy.get("input.float-input").eq(0).type("anthonyudehchinaza@gmail.com")
+        cy.get("input.float-input").eq(1).type("Ghostfire2000#")
+
+        //login
+        cy.get("button.btn-primary").eq(0).click()
+
+        //switch to hosting
+        cy.get("a.post-btn").eq(0).click()
+
+        //assertions 
+        cy.url().should('eq', 'https://staging.brooi.com/hosting')
+
+        //navigate 
+        cy.get('button[type="button"]._hwa832y').click()
+        cy.get('a.c1b2ssu5').eq(0).click()
+
+        //navigate to KYC 
+        cy.get('._1wwpygd2[data-v-869fced8]').click()
+
+        //host your own 
+        cy.get('div._1xsfdvpa').eq(0).click()
+        cy.get('button.next-button').click()
+
+
+        //Professional host
+        cy.get('div._1xsfdvpa').eq(1).click()
+        cy.get('button.next-button').click()
+
+        //validating back button 
+        cy.get('.svg-button[data-v-df1eed92]').click()
+    })
+
 })
