@@ -35,10 +35,10 @@ describe('Payments and Payouts automation', () => {
         cy.get('input[type="text"].float-input').eq(2).type('978')
         cy.get('input[type="text"].float-input').eq(3).type('Chris Idowu Street')
         cy.get('input[type="text"].float-input').eq(4).type('36')
-        cy.get('input[type="text"].float-input').eq(0).type('Ejigbo')
-        cy.get('input[type="text"].float-input').eq(0).type('Lagos')
-        cy.get('input[type="text"].float-input').eq(0).type('10024')
-        cy.get('select.location-select-country').click()
+        cy.get('input[type="text"].float-input').eq(5).type('Ejigbo')
+        cy.get('input[type="text"].float-input').eq(6).type('Lagos')
+        cy.get('input[type="text"].float-input').eq(7).type('10024')
+        cy.get('select.select').eq(0).click() //this line is not working yet network bad for now
         cy.get('option[value="NG"]').click()
 
         //validating Submit input 
@@ -155,5 +155,13 @@ describe('Payments and Payouts automation', () => {
         //route to payouts 
         cy.get('button.set-btn').eq(1).click()
         cy.get('a.manage-btn').click()
+
+        cy.get('select.select').eq(0).click()//this line is not working yet network bad for now
+        cy.get('option[value="NG"]').click()
+
+        cy.get('button[type="button"]._1ku51f04').click()
+
+        cy.get('select.select').eq(0).click()//this line is not working yet network bad for now
+        cy.get('option[value="NG"]').click()
     })
 })
