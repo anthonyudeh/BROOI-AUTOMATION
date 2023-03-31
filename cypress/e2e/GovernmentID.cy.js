@@ -29,7 +29,6 @@ describe("css selectors", () => {
         //validating back button
         cy.get("._pa35zs").click()
         
-
     })
 
 

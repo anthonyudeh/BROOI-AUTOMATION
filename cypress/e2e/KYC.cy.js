@@ -1,5 +1,11 @@
 describe('Know your customer verification', ()=>{
 
+    beforeEach(() => {
+        // run these tests as if in a desktop
+        // browser with a 720p monitor
+        cy.viewport(1280, 720)
+    })
+
     it('User Interface flow', ()=>{
         cy.visit("https://staging.brooi.com/?tab=login")
 
@@ -132,11 +138,12 @@ describe('Know your customer verification', ()=>{
         cy.get('div._1xsfdvpa').eq(0).click()
         cy.get('button.next-button').click()
 
-        //confirm your identity u
+        //confirm your identity user
         cy.get("input.float-input").eq(0).type("Anthony")
         cy.get("input.float-input").eq(1).type("Udeh")
-        cy.get('select.select').eq(1).click()//this line is not working yet network bad for now
-        cy.get('option[value="NG"]').click()
+        cy.get(':nth-child(2) > ._4mmmhh > ._19nw8j1 > ._1djpu7h > #address-form-field-country_code').click()
+        //cy.get('select.select').eq(1).click()//this line is not working yet network bad for now
+        //cy.get('option[value="NG"]').click()
         cy.get("input.float-input").eq(2).type("Chris Idowu street")
         cy.get("input.float-input").eq(3).type("36")
         cy.get("input.float-input").eq(4).type("Ejigbo")

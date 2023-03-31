@@ -38,8 +38,6 @@ describe('Become a host', () => {
         //create listing
         cy.get("button.listing-action-btn").click()
 
-        cy
-
     })
 
 
@@ -55,7 +53,5 @@ describe('Become a host', () => {
 
         //assertion
         cy.get('span.header-font-wrapper').should('not.equal','https://staging.brooi.com/')
-
-
     })
 })

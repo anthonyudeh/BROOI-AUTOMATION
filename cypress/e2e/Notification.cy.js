@@ -30,6 +30,5 @@ describe('Notification validation', ()=>{
          //This element <div.modal-close> is not visible because its parent <div.modal-background.inactive.slide-up> has CSS property: display: none
 
 
-
     })
 })
