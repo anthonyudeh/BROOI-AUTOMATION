@@ -141,8 +141,9 @@ describe('Know your customer verification', ()=>{
         //confirm your identity user
         cy.get("input.float-input").eq(0).type("Anthony")
         cy.get("input.float-input").eq(1).type("Udeh")
-        cy.get(':nth-child(2) > ._4mmmhh > ._19nw8j1 > ._1djpu7h > #address-form-field-country_code').click()
-        //cy.get('select.select').eq(1).click()//this line is not working yet network bad for now
+        // cy.get(':nth-child(2) > ._4mmmhh > ._19nw8j1 > ._1djpu7h > #address-form-field-country_code').click()
+
+        cy.get("select").select(1).invoke("val").should("eq", "lowestprice").click()
         //cy.get('option[value="NG"]').click()
         cy.get("input.float-input").eq(2).type("Chris Idowu street")
         cy.get("input.float-input").eq(3).type("36")
