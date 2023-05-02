@@ -121,7 +121,7 @@ describe("css selectors", () => {
 
                 let actualName = x.text()
                 expect(actualName).to.equal(expectedName)
-                 expect(actualName).to.not.equal(expectedName) //negative
+                
                   
                })
             })
@@ -152,12 +152,7 @@ describe("css selectors", () => {
 
               })
 
-
-
             })
-
-
-
             assert -TDD 
         })
          
