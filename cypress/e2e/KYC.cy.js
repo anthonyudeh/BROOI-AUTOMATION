@@ -32,6 +32,16 @@ describe('Know your customer verification', ()=>{
         //host your own 
         cy.get('div._1xsfdvpa').eq(0).click()
         cy.get('button.next-button').click()
+
+        cy.get('p.header-title').should('equ', 'Registered Person')
+
+        cy.get('div._1gpt9bqj').should('equ', 'Are you registered as a business?')
+        
+        //learn more modal
+        cy.get('div._15rpys7s').click()
+        //close host verification modal
+        cy.get('div.modal-close').clcik()
+
     })
 
 

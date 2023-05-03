@@ -18,16 +18,44 @@ describe("css selectors", () => {
     cy.get("button.edit--btn").eq(5).click()
 
     //user government ID
+
+    //title verification 
+    cy.title().should('equ', 'brooi')
+
+    //URL Verification
+    cy.url().should('eq', 'https://staging.brooi.com/account-settings/personal-info/government-id/provide-id').should('contain', 'government-id').should('include', 'staging.brooi.com').and('not.contain', 'greenHrm')
+
+    cy.get('.ebq526p').should('be.visible').and('equ', 'Identity verification')
+
+    cy.get('._1v9n5m').should('be.visible').and('equ', 'Please provide a government ID')
+
+    cy.get('._uhlm2').should('be.visible')
+
     cy.get('button[type="button"]._74ax9g3').click()
 
 
     //upload an exisiting photo 
+  
     cy.get("label._rin72m").eq(0).click()
     cy.get('button[type="button"]._1qosfpsp').click()
 
 
+    //Choose an ID  type verification
+    cy.get('div.ebq526p').should('equ', 'Identity verification')
+
+    cy.get('div._1vb9n5m').should('equ', 'Choose an ID type to add')
+
+    cy.get('select.location-country-select').click()
+
+    cy.get('option').eq(3).click()
+
+    cy.get('input[type=radio]').equ(1).click()
+
     //validating back button
-    cy.get("._pa35zs").click()
+    // cy.get("._pa35zs").click()
+
+    //Validating continue button 
+    cy.get('button._74ax9g3').clck()
 
   })
 
