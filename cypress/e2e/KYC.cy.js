@@ -42,6 +42,33 @@ describe('Know your customer verification', ()=>{
         //close host verification modal
         cy.get('div.modal-close').clcik()
 
+        //Non-professional host 
+        cy.get('button.registered-business-btn').equ(0).click()
+
+        cy.get('button.next-button').equ(0).click()
+
+        //Confirm your identity
+
+        cy.title().should('equ', 'brooi')
+        cy.url().should('equ', 'https://staging.brooi.com/accounts/kyc/your-info')
+        cy.get('p.header-title').should('equ', 'Your Info')
+        cy.get('h3.h3-heading').should('equ', 'Confirm your identity')
+
+        cy.get('span.desc-1').should('include', 'Make sure everything’s accurate so we can verify your account. Learn more')
+
+        //Legal name
+        cy.get('.desc-2').should('contain', 'Legal name')
+
+        cy.get('span.gov-desc').should('equ', 'The name that appears on government IDs and official documents. If you’ve already uploaded a government ID, make sure the name you provide matches the name on the ID.')
+
+        cy.get('input.float-input').equ(0).type('Anthony')
+        cy.get('input.float-input').equ(1).type('Udeh')
+
+
+        
+
+
+
     })
 
 
@@ -208,8 +235,10 @@ describe('Know your customer verification', ()=>{
 
 
         //Professional host
-        cy.get('div._1xsfdvpa').eq(1).click()
+        cy.get('div._1xsfdvpa').eq(0).click()
         cy.get('button.next-button').click()
+
+
 
         //validating back button 
         cy.get('.svg-button[data-v-df1eed92]').click()
