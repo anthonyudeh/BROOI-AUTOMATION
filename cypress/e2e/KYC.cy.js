@@ -64,11 +64,6 @@ describe('Know your customer verification', ()=>{
         cy.get('input.float-input').equ(0).type('Anthony')
         cy.get('input.float-input').equ(1).type('Udeh')
 
-
-        
-
-
-
     })
 
 
@@ -92,6 +87,7 @@ describe('Know your customer verification', ()=>{
         //navigate 
         cy.get('button[type="button"]._hwa832y').click()
         cy.get('a.c1b2ssu5').eq(0).click()
+        
 
         //navigate to KYC 
         cy.get('._1wwpygd2[data-v-869fced8]').click()

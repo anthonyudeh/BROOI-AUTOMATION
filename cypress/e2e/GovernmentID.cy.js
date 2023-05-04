@@ -35,8 +35,12 @@ describe("css selectors", () => {
 
 
     //upload an exisiting photo 
-  
-    cy.get("label._rin72m").eq(0).click()
+
+    cy.get('input[type=radio').eq(0).should('be.visible')
+    cy.get('input[type=radio').eq(1).should('.be.visible')
+    cy.get('input[type=radio]').eq(0).check().should('be.checked')
+    cy.get('input[type=radio]').eq(1).should('not.be.checked')
+
     cy.get('button[type="button"]._1qosfpsp').click()
 
 
